@@ -123,7 +123,7 @@ function lookup4(stringifiedIp:string): Promise<ipInfo|null> {
       const index = utils.binarySearch(data, ip, firstArrayItem)
       ipData = data[index]
       if(ipData[1] == null){
-        throw "IP doesn't any region nor country associated"
+        throw "IP doesn't have any region or country associated"
       }
       nextIp = getNextIp<ipBlockRecord>(data, index, nextIp, firstArrayItem)
       return readLocationRecord(ipData[1])
